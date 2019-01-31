@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http=-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.2/vue-router.min.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <main>
+            <div id="app">
+<router-link v-if="authenticated" to="/login" v-on:click.native="logout()">Log out</router-link>
+              <!-- Componenets get rendered here -->
+                  <transition name="fade" mode:="out-in">
+          <router-view @authenticated="setAuthenticated" />
+          </transition>
+      </div>
+    </main>
+
+      <script type="module" src="js/main.js"></script>
+</body>
+</html>
